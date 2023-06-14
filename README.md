@@ -21,7 +21,6 @@
 ### Requisitos
 
 - [Python](https://www.python.org/)
-- [Poetry](https://python-poetry.org/)
 - [Docker](https://www.docker.com/) (Linux)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) (Windows e Mac)
 - [Docker Compose](https://docs.docker.com/compose/) (Linux, Windows e Mac)
