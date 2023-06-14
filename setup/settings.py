@@ -11,9 +11,12 @@ SECRET_KEY = 'django-insecure-+0sbtb1wb+6(ullvv9_px^p4ujocup%3rw1l6x!cyi@vryfft&
 
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['*']
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200", 
+]
+
 
 INSTALLED_APPS = [
     'apps.properties',
@@ -30,10 +33,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -71,7 +74,6 @@ DATABASES = {
         "USER": os.environ.get("POSTGRES_USER"),
         "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
         "HOST": "db",
-        "TEST": {"NAME": "test_cassiopeia"},
     }
 }
 

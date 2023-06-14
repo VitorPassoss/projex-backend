@@ -9,7 +9,7 @@ PROPERTY_TYPE = [
 
 
 class Property(models.Model):
-    user_fk = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user_fk = models.ForeignKey(User, on_delete=models.CASCADE)
     property_type = models.CharField(
         max_length=2, choices=PROPERTY_TYPE, blank=True
     )

@@ -12,8 +12,10 @@ class PropertySerializer(serializers.ModelSerializer):
             'adress',
             'price',
             'price_buyer',
+            'price_seller',
             'size',
             'bedrooms',
             'availability',
-            'image_url'
+            'image_url',
+            'pk'
         ]

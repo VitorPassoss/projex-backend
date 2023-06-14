@@ -28,7 +28,7 @@ services:
 
   adminer:
     image: adminer
-    container_name: adminer_bomgosto
+    container_name: adminer_projex
     restart: always
     ports:
       - 8080:8080
