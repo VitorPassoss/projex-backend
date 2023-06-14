@@ -30,7 +30,7 @@ class GetMyProperties(APIView):
     permission_classes = [ IsAuthenticated ]
     def get(self, request):
         try:
-            props_stock = Property.objects.filter(user_fk=request.user.pk, availability= True)
+            props_stock = Property.objects.filter(user_fk=request.user.pk, availability= True).order_by('-pk')
             props_serialized = PropertySerializer(props_stock, many=True).data
             response_data = {
                 'properties': props_serialized
@@ -60,7 +60,7 @@ class GetMyHistory(APIView):
     permission_classes = [ IsAuthenticated ]
     def get(self, request):
         try:
-            props_stock = Property.objects.filter(user_fk=request.user.pk, availability= False)
+            props_stock = Property.objects.filter(user_fk=request.user.pk, availability= False).order_by('-pk')
             props_serialized = PropertySerializer(props_stock, many=True).data
             response_data = {
                 'properties': props_serialized
