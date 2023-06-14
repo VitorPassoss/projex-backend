@@ -38,10 +38,10 @@ cd projex-backend
 docker-compose up -d --build
 
 # Execute as migrações
-python manage.py migrate
+docker exec -it app python manage.py migrate
 
 # Crie um super usuário
-python manage.py createsuperuser
+docker exec -it app python manage.py createsuperuser
 ```
 
 
